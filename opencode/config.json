@@ -11,8 +11,8 @@
         "cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4": {
           "name": "cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4",
           "limit": {
-            "context": 131072,
-            "output": 16384
+            "context": 262144,
+            "output": 65536
           }
         }
       }
