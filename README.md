@@ -1,5 +1,7 @@
 # Best model for dual 3090
 
+[cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4](https://huggingface.co/cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4)
+
 Great for coding agents like OpenCode, Cline...
 
 Just run the docker compose. vllm will download the model and start the server.
