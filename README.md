@@ -15,5 +15,3 @@ I use one for screen so 0.93 was for me the max one I could get without vllm ref
 
 ### --max-model-len
 262144, 131072, 65536 the less the faster. 262144 is sweet spot.
-
-NVIDIA GeForce RTX 3090
