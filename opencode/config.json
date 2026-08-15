@@ -10,9 +10,14 @@
       "models": {
         "cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4": {
           "name": "cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4",
+          "attachment": true,
           "limit": {
             "context": 262144,
             "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
           }
         }
       }
