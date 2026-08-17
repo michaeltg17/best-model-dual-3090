@@ -1,0 +1,51 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local",
+      "options": {
+        "baseURL": "http://192.168.1.100:8080/v1"
+      },
+      "models": {
+        "cyankiwi/Qwen3.8-27B-AWQ-FP8": {
+          "name": "cyankiwi/Qwen3.8-27B-AWQ-FP8",
+          "attachment": true,
+          "limit": {
+            "context": 262144,
+            "output": 65536
+          },
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          }
+        }
+      }
+    }
+  },
+  "model": "local/cyankiwi/Qwen3.8-27B-AWQ-FP8",
+  "mcp": {
+    "searxng": {
+      "type": "local",
+      "command": ["mcp-searxng"],
+      "enabled": true,
+      "environment": {
+        "SEARXNG_URL": "http://192.168.1.46:8081"
+      }
+    },
+    "vs-mcp": {
+      "type": "remote",
+      "url": "http://localhost:3001/sdk/",
+      "enabled": true
+    },
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": true,
+      "oauth": false,
+      "headers": {
+        "Authorization": "Bearer {env:GITHUB_PERSONAL_ACCESS_TOKEN}"
+      }
+    }
+  }
+}
