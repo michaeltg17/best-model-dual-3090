@@ -18,7 +18,7 @@ Max I could get was 0.94 and if lower it can't start. I'm using Windows with Doc
 262144, 131072, 65536 the less the faster but gets full quite often. 262144 is sweet spot.
 
 ## Currently testing:
-1. cyankiwi/Qwen3.8-27B-AWQ-BF16-INT4 (still not available)
+1. [cyankiwi/Qwen3.8-27B-AWQ-BF16-INT4](https://huggingface.co/cyankiwi/Qwen3.8-27B-AWQ-BF16-INT4)
 2. [cyankiwi/Qwen3.8-27B-AWQ-FP8](https://huggingface.co/cyankiwi/Qwen3.8-27B-AWQ-FP8)
 3. [Qwen/Qwen3.8-27B-FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8)
 
