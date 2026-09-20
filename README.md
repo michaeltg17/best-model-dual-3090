@@ -1,31 +1,29 @@
 # Best model for dual 3090
 
-[cyankiwi/Qwen3.8-27B-AWQ-FP8](https://huggingface.co/cyankiwi/Qwen3.8-27B-AWQ-FP8)
+[ggml-org/Qwen3.8-27B-GGUF - Q8_0](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF?show_file_info=Qwen3.8-27B-Q8_0.gguf)
 
-Great for coding agents like OpenCode, Cline...
+Windows. 50 tk/s avg. 250k context. MTP. Vision. Great for OpenCode. See run.ps1 script.
 
-Just run the docker compose. vLLM will download the model and start the server.
+## Installation
 
-Also the opencode.json file for OpenCode. Copy to: 
+1. Download the model, mtp and mmproj from HF:
+    - [Qwen3.8-27B-Q8_0.gguf](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/main/Qwen3.8-27B-Q8_0.gguf)
+    - [mtp-Qwen3.8-27B-Q8_0.gguf](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/main/mtp-Qwen3.8-27B-Q8_0.gguf)
+    - [mmproj-Qwen3.8-27B-BF16.gguf](https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF/resolve/main/mmproj-Qwen3.8-27B-BF16.gguf)
 
-C:\Users\<YOUR_USERNAME>\.config\opencode\opencode.json
+2. Run `nvidia-smi` and check CUDA Version. Mine is 13.3.
 
-## Extra info
-### --gpu-memory-utilization
-Max I could get was 0.94 and if lower it can't start. I'm using Windows with Docker and WSL so to improve this you must use Linux as main os.
+3. Download [llama.cpp](https://github.com/ggml-org/llama.cpp/releases) for this cuda version. Example:
+   ```
+   llama-b10964-bin-win-cuda-13.3-x64.zip
+   cudart-llama-bin-win-cuda-13.3-x64.zip
+   ```
 
-### --max-model-len
-262144, 131072, 65536 the less the faster but gets full quite often. 262144 is sweet spot.
+4. Extract both to same folder.
 
-## Currently testing:
-1. cyankiwi/Qwen3.8-27B-AWQ-BF16-INT4 (still not available)
-2. [cyankiwi/Qwen3.8-27B-AWQ-FP8](https://huggingface.co/cyankiwi/Qwen3.8-27B-AWQ-FP8)
-3. [Qwen/Qwen3.8-27B-FP8](https://huggingface.co/Qwen/Qwen3.8-27B-FP8)
+5. Run app using the run.ps1 script.
 
-Ordered from expected best to worse. Still testing with vLLM and SGLang.
-
-## Old best one:
-
-[cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4](https://huggingface.co/cyankiwi/Qwen3.6-27B-AWQ-BF16-INT4)
-
-Both compose and OpenCode in old folder.
+6. For OpenCode config copy opencode.json to:
+   ```
+   C:\Users\<YOUR_USERNAME>\.config\opencode\opencode.json
+   ```
