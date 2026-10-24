@@ -12,5 +12,6 @@ $env:CUDA_VISIBLE_DEVICES="0,1"
   --spec-draft-ngl all `
   --host 192.168.1.100 `
   --fit on `
+  --image-min-tokens 1024
 
 pause
